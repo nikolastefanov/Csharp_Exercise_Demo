@@ -6,6 +6,13 @@ namespace Reflection_Demo_CSharp.Core
 {
     public class Engine : IEngine
     {
+        private readonly ICommandInterpreter commandInterpreter;
+
+        public Engine(ICommandInterpreter commandInterpreter)
+         {
+            this.commandInterpreter=commandInterpreter;
+         }
+    
         public void Run()
         {
             while(true)
@@ -14,7 +21,7 @@ namespace Reflection_Demo_CSharp.Core
 
                 //pas => CommangInput
 
-                string result = string.Empty;
+                string result = this.commandInterpreter.Read(input);
 
                 Console.WriteLine(result);
             }

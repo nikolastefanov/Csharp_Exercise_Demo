@@ -2,7 +2,7 @@
 
 namespace Reflection_Demo_CSharp.Core.Contracts
 {
-    public interface ICommandIntepreter
+    public interface ICommandInterpreter
     {
         string Read(string args);
     }
